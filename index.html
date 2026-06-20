@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Queen Hair By Ilhem — Salon de coiffure, Montréal</title>
+<meta name="description" content="Queen Hair By Ilhem — salon de coiffure spécialisé en balayage, lissage et soins capillaires à Montréal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:    #0e0c0b;
+  --charcoal: #1e1a17;
+  --warm:     #2e2520;
+  --gold:     #c9a96e;
+  --gold-lt:  #e2c99a;
+  --cream:    #f5f0e8;
+  --white:    #fdfcfa;
+  --muted:    #9a8878;
+  --rose:     #b23a56;
+  --rose-dk:  #8f2c44;
+  --line:     rgba(201,169,110,0.18);
+  --maxw: 1160px;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body:    "Jost", sans-serif;
+  --font-ar:      "Cairo", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+html[lang="ar"] body, html[lang="ar"] body * { font-family: var(--font-ar) !important; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: 28px; }
+
+/* ── TYPOGRAPHY ── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+html[lang="ar"] .eyebrow { letter-spacing: 0; }
+.eyebrow::before {
+  content: "";
+  width: 28px; height: 1px;
+  background: var(--gold);
+  flex: none;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; color: var(--black); }
+.accent { color: var(--gold); font-style: italic; }
+html[lang="ar"] .accent { font-style: normal; }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px;
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  cursor: pointer; border: 1px solid transparent;
+  transition: background .22s, color .22s, border-color .22s, transform .15s, box-shadow .22s;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -6px rgba(14,12,11,.2); }
+.btn:active { transform: translateY(0); }
+.btn-gold { background: var(--gold); color: var(--black); }
+.btn-gold:hover { background: var(--gold-lt); }
+.btn-outline { border-color: var(--gold); color: var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.btn-outline-light { border-color: rgba(255,255,255,.5); color: var(--white); }
+.btn-outline-light:hover { border-color: var(--gold); color: var(--gold); }
+.btn-dark { background: var(--charcoal); color: var(--gold-lt); }
+.btn-dark:hover { background: var(--warm); }
+
+/* ── HEADER ── */
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(253,252,250,.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(14,12,11,.07);
+}
+.nav-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-block: 18px; gap: 20px;
+}
+.brand {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 400;
+  color: var(--black); letter-spacing: .02em;
+  line-height: 1.1;
+  display: flex; align-items: center; gap: 10px;
+}
+.brand-mark { width: 42px; height: 42px; flex: none; }
+.brand em { display: block; font-family: var(--font-body); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-style: normal; font-weight: 500; margin-top: 3px; }
+nav.links { display: flex; gap: 32px; font-size: 13px; font-weight: 400; letter-spacing: .04em; }
+nav.links a { color: var(--muted); transition: color .15s; position: relative; }
+nav.links a::after { content:""; position:absolute; bottom:-3px; left:0; width:0; height:1px; background:var(--gold); transition:width .25s; }
+nav.links a:hover { color: var(--black); }
+nav.links a:hover::after { width: 100%; }
+.head-right { display: flex; align-items: center; gap: 16px; }
+.langs { display: flex; border: 1px solid rgba(14,12,11,.1); }
+.langs button {
+  border: none; background: transparent; cursor: pointer;
+  font-family: var(--font-body); font-size: 11px; font-weight: 500;
+  letter-spacing: .08em; padding: 7px 11px; color: var(--muted);
+  transition: background .15s, color .15s;
+}
+.langs button.active { background: var(--black); color: var(--gold-lt); }
+.nav-cta { display: none; }
+@media (min-width: 860px) { .nav-cta { display: inline-flex; } }
+.burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.burger span { width: 22px; height: 1px; background: var(--black); display: block; transition: .3s; }
+@media (max-width: 859px) { nav.links { display: none; } .burger { display: flex; } }
+.mobile-menu { display: none; flex-direction: column; gap: 0; padding: 0 28px 20px; border-top: 1px solid rgba(14,12,11,.07); background: rgba(253,252,250,.98); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 14px 0; font-size: 14px; border-bottom: 1px solid rgba(14,12,11,.06); color: var(--muted); letter-spacing: .03em; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1fr 1fr; min-height: 88vh; }
+}
+.hero-img {
+  position: relative;
+  min-height: 55vw;
+  order: -1;
+}
+@media (min-width: 900px) { .hero-img { order: 1; min-height: unset; } }
+.hero-img img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  background: var(--charcoal);
+}
+.hero-copy {
+  background: var(--charcoal);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 64px 28px;
+}
+@media (min-width: 900px) {
+  .hero-copy { padding-inline-start: max(56px, calc((100vw - var(--maxw))/2 + 28px)); padding-inline-end: 72px; padding-block: 80px; }
+}
+.hero-copy-inner { max-width: 480px; }
+.hero-copy .eyebrow { color: var(--gold); }
+.hero-copy .eyebrow::before { background: var(--gold); }
+.hero-eyebrow { font-size: 22px !important; letter-spacing: .08em !important; font-weight: 300 !important; font-family: var(--font-display) !important; text-transform: none !important; line-height: 1.3; color: var(--gold-lt) !important; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.eyebrow-sub { font-family: var(--font-body) !important; font-size: 11px !important; letter-spacing: .14em !important; text-transform: uppercase !important; font-weight: 500 !important; font-style: normal !important; color: var(--gold) !important; }
+.hero-h1 {
+  font-size: clamp(38px, 5.5vw, 64px);
+  line-height: 1.05;
+  color: var(--white);
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.hero-sub { font-size: 15px; color: #b8a898; line-height: 1.7; max-width: 42ch; margin-bottom: 36px; font-weight: 300; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ── GOLD RULE ── */
+.gold-rule { height: 1px; background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-lt) 60%, transparent); }
+
+/* ── SECTION BASE ── */
+.section { padding-block: 96px; }
+.section-head { margin-bottom: 56px; }
+.section-head h2 { font-size: clamp(30px, 3.8vw, 48px); line-height: 1.1; margin-bottom: 14px; }
+.section-head p { color: var(--muted); font-size: 15px; max-width: 52ch; font-weight: 300; }
+
+/* ── STATS BAR ── */
+.stats-bar { background: var(--black); padding: 40px 0; }
+.stats-row { display: flex; flex-wrap: wrap; gap: 0; justify-content: space-around; }
+.stat-item { text-align: center; padding: 16px 28px; }
+.stat-num { font-family: var(--font-display); font-size: clamp(36px, 4vw, 52px); font-weight: 300; color: var(--gold); line-height: 1; }
+.stat-label { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+/* ── GALLERY ── */
+.gallery-section { background: var(--cream); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (min-width: 700px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+@media (min-width: 1000px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+.gallery-card {
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: .82;
+  background: #ddd;
+  position: relative;
+}
+.gallery-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.gallery-card:hover img { transform: scale(1.05); }
+.gallery-card.contain-img img { object-fit: contain; background: #f0ece4; }
+
+/* before/after */
+.ba-card { aspect-ratio: .82; border-radius: 4px; overflow: hidden; display: flex; position: relative; }
+.ba-half { position: relative; width: 50%; overflow: hidden; }
+.ba-half img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.ba-card:hover .ba-half img { transform: scale(1.05); }
+.ba-half:first-child { border-right: 2px solid var(--white); }
+.ba-tag {
+  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+  font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+.ba-tag.before { background: rgba(14,12,11,.7); color: var(--gold-lt); }
+.ba-tag.after  { background: var(--rose); color: #fff; }
+
+/* ── SERVICES ── */
+.services-section { background: var(--black); }
+.services-section .eyebrow { color: var(--gold); }
+.services-section .eyebrow::before { background: var(--gold); }
+.services-section h2 { color: var(--white); }
+.services-section .section-head p { color: var(--muted); }
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+.service-item {
+  padding: 26px 22px;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: 14px; font-weight: 400; color: #c8b9a8;
+  transition: background .2s, color .2s, padding-left .2s;
+}
+.service-item:hover { background: rgba(201,169,110,.06); color: var(--gold-lt); padding-left: 30px; }
+.service-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold);
+  flex: none; margin-top: 6px;
+}
+
+/* ── ABOUT ── */
+.about-section { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center; }
+@media (min-width: 880px) { .about-grid { grid-template-columns: 1fr 1fr; } }
+.about-copy h2 { font-size: clamp(30px, 3.4vw, 44px); margin-bottom: 20px; }
+.about-copy p { font-size: 16px; color: #5a4f47; line-height: 1.8; max-width: 50ch; font-weight: 300; margin-bottom: 32px; }
+.about-photo { border-radius: 4px; overflow: hidden; aspect-ratio: .9; box-shadow: 0 24px 56px -20px rgba(14,12,11,.3); }
+.about-photo img { width: 100%; height: 100%; object-fit: contain; background: var(--cream); }
+.about-socials { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ── CONTACT ── */
+.contact-section { background: var(--black); }
+.contact-section .eyebrow { color: var(--gold); }
+.contact-section .eyebrow::before { background: var(--gold); }
+.contact-section h2 { color: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 56px; }
+@media (min-width: 880px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+.info-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 8px; }
+.info-value { font-size: 17px; color: var(--cream); font-weight: 300; margin-bottom: 28px; }
+.info-value a:hover { color: var(--gold); }
+.map-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+.hours-table { width: 100%; border-collapse: collapse; }
+.hours-table tr { border-bottom: 1px solid var(--line); }
+.hours-table td { padding: 12px 0; font-size: 14px; color: #c0b0a0; font-weight: 300; }
+.hours-table td:last-child { text-align: end; font-weight: 500; color: var(--cream); }
+.hours-table tr.closed td:last-child { color: var(--muted); }
+.social-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.social-links a { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-lt); font-weight: 500; transition: color .15s; }
+.social-links a:hover { color: var(--gold); }
+
+/* ── CTA BAND ── */
+.cta-band {
+  background: var(--gold);
+  padding: 72px 0;
+  text-align: center;
+}
+.cta-band h2 { font-size: clamp(28px, 3.5vw, 44px); color: var(--black); margin-bottom: 12px; }
+.cta-band p { font-size: 15px; color: rgba(14,12,11,.65); max-width: 46ch; margin: 0 auto 32px; font-weight: 300; }
+.cta-band-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* ── FOOTER ── */
+footer { background: var(--black); padding: 40px 0; border-top: 1px solid var(--line); }
+.footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 12px; color: var(--muted); }
+.footer-brand { font-family: var(--font-display); font-size: 18px; color: var(--gold-lt); display: flex; align-items: center; gap: 10px; }
+.footer-brand-mark { width: 36px; height: 36px; flex: none; }
+.footer-brand em { display: block; font-family: var(--font-body); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-style: normal; margin-top: 2px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer-links a { color: var(--muted); letter-spacing: .04em; transition: color .15s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.hero-copy .eyebrow   { animation: fadeUp .6s ease both .1s; }
+.hero-h1              { animation: fadeUp .7s ease both .25s; }
+.hero-sub             { animation: fadeUp .7s ease both .4s; }
+.hero-ctas            { animation: fadeUp .7s ease both .55s; }
+.hero-img             { animation: fadeIn .9s ease both .1s; }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+.reveal-d4 { transition-delay: .4s; }
+
+/* ── UTILITY ── */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { transition: none; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand"><img class="brand-mark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAwLDYyKSI+CiAgICA8cGF0aCBkPSJNIC0xNy41IC00LjUgTCAtMTQgLTE5LjUgTCAtNyAtNy41IEwgMCAtMjMgTCA3IC03LjUgTCAxNCAtMTkuNSBMIDE3LjUgLTQuNSBMIDE1IDAgTCAtMTUgMCBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODg2MGIiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSItMTQiIGN5PSItMTkuNSIgcj0iMi44IiBmaWxsPSIjYjg4NjBiIi8+CiAgPGNpcmNsZSBjeD0iMCIgY3k9Ii0yMyIgcj0iMy4yIiBmaWxsPSIjYjg4NjBiIi8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSItMTkuNSIgcj0iMi44IiBmaWxsPSIjYjg4NjBiIi8+CiAgPGxpbmUgeDE9Ii0xNSIgeTE9IjAiIHgyPSIxNSIgeTI9IjAiIHN0cm9rZT0iI2I4ODYwYiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwvZz4KICA8dGV4dCB4PSIxMDAiIHk9IjE1OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIxMDAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2I4ODYwYiIgc3Ryb2tlLXdpZHRoPSIzLjYiPlE8L3RleHQ+Cjwvc3ZnPgo=" alt="Logo Queen Hair By Ilhem">Queen Hair<em>By Ilhem</em></a>
+    <nav class="links">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#gallery" data-i18n="nav.work">Mon Travail</a>
+      <a href="#about" data-i18n="nav.about">À propos</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="head-right">
+      <div class="langs">
+        <button data-lang="fr" class="active">FR</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="ar">AR</button>
+      </div>
+      <a href="tel:+15145063555" class="btn btn-gold nav-cta" data-i18n="nav.cta">Réserver</a>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#gallery" data-i18n="nav.work">Mon Travail</a>
+    <a href="#about" data-i18n="nav.about">À propos</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+    <a href="tel:+15145063555" data-i18n="nav.cta">Réserver</a>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-copy">
+    <div class="hero-copy-inner">
+      <p class="eyebrow hero-eyebrow" data-i18n-html="hero.eyebrow">QUEEN HAIR <span class="eyebrow-sub">By Ilhem</span></p>
+      <p class="hero-sub" data-i18n="hero.sub">Queen Hair By Ilhem est un salon montréalais spécialisé en balayage, lissage et soins capillaires.</p>
+      <div class="hero-ctas">
+        <a href="tel:+15145063555" class="btn btn-gold" data-i18n="hero.cta1">Appeler le salon</a>
+        <a href="sms:+15145063555" class="btn btn-outline-light" data-i18n="hero.cta2">Réserver par texto</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="725014929_1018668663957538_7471070055846826329_n.jpg" alt="Queen Hair By Ilhem — Balayage">
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-row">
+      <div class="stat-item reveal">
+        <div class="stat-num">5★</div>
+        <div class="stat-label" data-i18n="stats.reviews">Avis clients</div>
+      </div>
+      <div class="stat-item reveal reveal-d1">
+        <div class="stat-num">10+</div>
+        <div class="stat-label" data-i18n="stats.years">Années d'expérience</div>
+      </div>
+      <div class="stat-item reveal reveal-d2">
+        <div class="stat-num">13</div>
+        <div class="stat-label" data-i18n="stats.services">Services offerts</div>
+      </div>
+      <div class="stat-item reveal reveal-d3">
+        <div class="stat-num">MTL</div>
+        <div class="stat-label" data-i18n="stats.location">Montréal, Québec</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="services.eyebrow">CE QUE NOUS FAISONS</p>
+      <h2 data-i18n="services.heading">Services</h2>
+      <p data-i18n="services.sub">Un service complet de coiffure, pensé pour révéler la santé et la beauté naturelle de vos cheveux.</p>
+    </div>
+    <div class="services-grid reveal reveal-d2" id="servicesGrid"></div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="work.eyebrow">RÉALISATIONS</p>
+      <h2 data-i18n="work.heading">Mon Travail</h2>
+      <p data-i18n="work.sub">Découvrez un aperçu de nos transformations et soins capillaires professionnels.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-card ba-card reveal reveal-d1">
+        <div class="ba-half">
+          <img src="725626194_1006543635433741_7997601211115899122_n.jpg" alt="Avant">
+          <span class="ba-tag before">Avant</span>
+        </div>
+        <div class="ba-half">
+          <img src="88db8ade-ea4b-4a8f-bcd7-3178711b3c35.jpg" alt="Après">
+          <span class="ba-tag after">Après</span>
+        </div>
+      </div>
+      <div class="gallery-card reveal reveal-d2"><img src="725119778_1635494700891479_5384165387405280087_n.jpg" alt="Coiffure Queen Hair"></div>
+      <div class="gallery-card contain-img reveal reveal-d3"><img src="725588327_4317326055183275_2767527821510156210_n.jpg" alt="Coiffure Queen Hair"></div>
+      <div class="gallery-card reveal reveal-d4"><img src="725663472_1312185354437363_7358635450544423971_n.jpg" alt="Coiffure Queen Hair"></div>
+      <div class="gallery-card reveal reveal-d1"><img src="724782234_1730300017974393_786984212759252358_n.png" alt="Coiffure Queen Hair"></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p class="eyebrow" data-i18n="about.eyebrow">LE SALON</p>
+        <h2 data-i18n="about.heading">Queen Hair By Ilhem</h2>
+        <p data-i18n="about.body">Queen Hair By Ilhem est un salon spécialisé en lissage, balayage et soins capillaires, situé à Montréal. Nous créons des transformations capillaires modernes et brillantes, adaptées à chaque type de cheveux, pour révéler la beauté naturelle de chaque cliente avec des résultats professionnels et durables.</p>
+        <div class="about-socials">
+          <a href="https://www.instagram.com/hair_bylilitarget/" target="_blank" rel="noopener" class="btn btn-dark">Instagram</a>
+          <a href="https://www.tiktok.com/@louma_bhr" target="_blank" rel="noopener" class="btn btn-outline">TikTok</a>
+          <a href="https://www.facebook.com/louma.target" target="_blank" rel="noopener" class="btn btn-outline">Facebook</a>
+        </div>
+      </div>
+      <div class="about-photo reveal reveal-d2">
+        <img src="725014929_1018668663957538_7471070055846826329_n.jpg" alt="Queen Hair By Ilhem">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="contact.eyebrow">VISITEZ-NOUS</p>
+      <h2 data-i18n="contact.heading">Heures & Contact</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-label" data-i18n="contact.address">ADRESSE</div>
+        <div class="info-value">6342 Rue Jean-Talon E, suite 216<br>Montréal, Québec H1S 1M8</div>
+        <a class="map-link" target="_blank" rel="noopener" href="http://maps.google.com/?q=6342+Rue+Jean-Talon+E,+Montréal,+QC+H1S+1M8">
+          <span data-i18n="contact.directions">Itinéraire →</span>
+        </a>
+
+        <div class="info-label" style="margin-top:32px;" data-i18n="contact.phone">TÉLÉPHONE</div>
+        <div class="info-value"><a href="tel:+15145063555">(514) 506-3555</a></div>
+
+        <div class="info-label" data-i18n="contact.follow">SUIVEZ-NOUS</div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/hair_bylilitarget/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@louma_bhr" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.facebook.com/louma.target" target="_blank" rel="noopener">Facebook</a>
+        </div>
+
+        <div style="margin-top:32px;">
+          <a href="sms:+15145063555" class="btn btn-gold" data-i18n="hero.cta2">Réserver par texto</a>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="info-label" data-i18n="contact.hours">HEURES D'OUVERTURE</div>
+        <table class="hours-table" id="hoursTable"></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="wrap">
+    <h2 class="reveal" data-i18n="cta.heading">Prête pour votre transformation?</h2>
+    <p class="reveal reveal-d1" data-i18n="cta.sub">Réservez votre rendez-vous chez Queen Hair By Ilhem et vivez une expérience capillaire inoubliable.</p>
+    <div class="cta-band-btns reveal reveal-d2">
+      <a href="tel:+15145063555" class="btn btn-dark" data-i18n="hero.cta1">Appeler le salon</a>
+      <a href="sms:+15145063555" class="btn btn-dark" data-i18n="hero.cta2">Réserver par texto</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-brand"><img class="footer-brand-mark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAwLDYyKSI+CiAgICA8cGF0aCBkPSJNIC0xNy41IC00LjUgTCAtMTQgLTE5LjUgTCAtNyAtNy41IEwgMCAtMjMgTCA3IC03LjUgTCAxNCAtMTkuNSBMIDE3LjUgLTQuNSBMIDE1IDAgTCAtMTUgMCBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODg2MGIiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSItMTQiIGN5PSItMTkuNSIgcj0iMi44IiBmaWxsPSIjYjg4NjBiIi8+CiAgPGNpcmNsZSBjeD0iMCIgY3k9Ii0yMyIgcj0iMy4yIiBmaWxsPSIjYjg4NjBiIi8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSItMTkuNSIgcj0iMi44IiBmaWxsPSIjYjg4NjBiIi8+CiAgPGxpbmUgeDE9Ii0xNSIgeTE9IjAiIHgyPSIxNSIgeTI9IjAiIHN0cm9rZT0iI2I4ODYwYiIgc3Ryb2tlLXdpZHRoPSIzLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwvZz4KICA8dGV4dCB4PSIxMDAiIHk9IjE1OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIxMDAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2I4ODYwYiIgc3Ryb2tlLXdpZHRoPSIzLjYiPlE8L3RleHQ+Cjwvc3ZnPgo=" alt="Logo Queen Hair By Ilhem">Queen Hair<em>By Ilhem</em></div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/hair_bylilitarget/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@louma_bhr" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/louma.target" target="_blank" rel="noopener">Facebook</a>
+      <a href="tel:+15145063555">(514) 506-3555</a>
+    </div>
+    <div data-i18n="footer.copy">© 2026 Queen Hair By Ilhem. Tous droits réservés.</div>
+  </div>
+</footer>
+
+<script>
+const SERVICES = {
+  fr:["Coloration","Coiffure","Balayage","Brushing","Lissage brésilien","Cheveux bouclés","Extensions capillaires","Glaçage capillaire","Mèches / Highlights","Soins hydratants","Défrisage","Traitements à la kératine","Coloration ombrée"],
+  en:["Hair coloring","Hairstyling","Balayage","Blowdry","Brazilian hair straightening","Curly hair","Hair extensions","Hair glossing","Hair highlighting","Hair hydration treatments","Hair straightening","Keratin treatments","Ombré hair color"],
+  ar:["صبغ الشعر","تصفيف الشعر","بالياج","تجفيف بالفرشاة","فرد الشعر البرازيلي","الشعر المجعد","وصلات الشعر","تلميع الشعر","تفتيح الشعر","علاجات ترطيب الشعر","فرد الشعر","علاجات الكيراتين","صبغة أومبري"]
+};
+const HOURS = {
+  fr:[["Lundi","9 h – 18 h",0],["Mardi","Fermé",1],["Mercredi","Fermé",1],["Jeudi","9 h – 18 h",0],["Vendredi","9 h – 18 h",0],["Samedi","9 h – 18 h",0],["Dimanche","9 h – 18 h",0]],
+  en:[["Monday","9 am – 6 pm",0],["Tuesday","Closed",1],["Wednesday","Closed",1],["Thursday","9 am – 6 pm",0],["Friday","9 am – 6 pm",0],["Saturday","9 am – 6 pm",0],["Sunday","9 am – 6 pm",0]],
+  ar:[["الإثنين","9 ص – 6 م",0],["الثلاثاء","مغلق",1],["الأربعاء","مغلق",1],["الخميس","9 ص – 6 م",0],["الجمعة","9 ص – 6 م",0],["السبت","9 ص – 6 م",0],["الأحد","9 ص – 6 م",0]]
+};
+const T = {
+  fr:{
+    "nav.work":"Mon Travail","nav.services":"Services","nav.about":"À propos","nav.contact":"Contact","nav.cta":"Réserver",
+    "hero.eyebrow":"QUEEN HAIR <span class=\"eyebrow-sub\">By Ilhem</span>",
+    "hero.headline":"Des racines ternes à des pointes <span class=\"accent\">lumineuses</span>.",
+    "hero.sub":"Queen Hair By Ilhem est un salon montréalais spécialisé en balayage, lissage et soins capillaires.",
+    "hero.cta1":"Appeler le salon","hero.cta2":"Réserver par texto",
+    "stats.reviews":"Avis clients","stats.years":"Années d'expérience","stats.services":"Services offerts","stats.location":"Montréal, Québec",
+    "work.eyebrow":"RÉALISATIONS","work.heading":"Mon Travail","work.sub":"Découvrez un aperçu de nos transformations et soins capillaires professionnels.",
+    "services.eyebrow":"CE QUE NOUS FAISONS","services.heading":"Services","services.sub":"Un service complet de coiffure, pensé pour révéler la santé et la beauté naturelle de vos cheveux.",
+    "about.eyebrow":"LE SALON","about.heading":"Queen Hair By Ilhem",
+    "about.body":"Queen Hair By Ilhem est un salon spécialisé en lissage, balayage et soins capillaires, situé à Montréal. Nous créons des transformations capillaires modernes et brillantes, adaptées à chaque type de cheveux, pour révéler la beauté naturelle de chaque cliente avec des résultats professionnels et durables.",
+    "contact.eyebrow":"VISITEZ-NOUS","contact.heading":"Heures & Contact","contact.address":"ADRESSE","contact.phone":"TÉLÉPHONE","contact.follow":"SUIVEZ-NOUS","contact.hours":"HEURES D'OUVERTURE","contact.directions":"Itinéraire →",
+    "cta.heading":"Prête pour votre transformation?","cta.sub":"Réservez votre rendez-vous chez Queen Hair By Ilhem et vivez une expérience capillaire inoubliable.",
+    "footer.copy":"© 2026 Queen Hair By Ilhem. Tous droits réservés."
+  },
+  en:{
+    "nav.work":"My Work","nav.services":"Services","nav.about":"About","nav.contact":"Contact","nav.cta":"Book Now",
+    "hero.eyebrow":"QUEEN HAIR <span class=\"eyebrow-sub\">By Ilhem</span>",
+    "hero.headline":"From tired roots to <span class=\"accent\">luminous</span> ends.",
+    "hero.sub":"Queen Hair By Ilhem is a Montreal salon specialized in balayage, straightening and hair care.",
+    "hero.cta1":"Call the salon","hero.cta2":"Text to book",
+    "stats.reviews":"Client reviews","stats.years":"Years of experience","stats.services":"Services offered","stats.location":"Montreal, Quebec",
+    "work.eyebrow":"PORTFOLIO","work.heading":"My Work","work.sub":"Discover a preview of our professional hair transformations and treatments.",
+    "services.eyebrow":"WHAT WE DO","services.heading":"Services","services.sub":"A full range of hair services, designed to reveal the health and natural beauty of your hair.",
+    "about.eyebrow":"THE SALON","about.heading":"Queen Hair By Ilhem",
+    "about.body":"Queen Hair By Ilhem is a Montreal salon specialized in straightening, balayage and hair care. We create modern, glossy hair transformations tailored to every hair type — revealing each client's natural beauty with professional, long-lasting results.",
+    "contact.eyebrow":"VISIT US","contact.heading":"Hours & Contact","contact.address":"ADDRESS","contact.phone":"PHONE","contact.follow":"FOLLOW US","contact.hours":"OPENING HOURS","contact.directions":"Get directions →",
+    "cta.heading":"Ready for your transformation?","cta.sub":"Book your appointment at Queen Hair By Ilhem and enjoy an unforgettable hair experience.",
+    "footer.copy":"© 2026 Queen Hair By Ilhem. All rights reserved."
+  },
+  ar:{
+    "nav.work":"عملي","nav.services":"الخدمات","nav.about":"من نحن","nav.contact":"التواصل","nav.cta":"احجزي الآن",
+    "hero.eyebrow":"كوين هير <span class=\"eyebrow-sub\">باي إلهام</span>",
+    "hero.headline":"من جذور باهتة إلى أطراف <span class=\"accent\">متلألئة</span>.",
+    "hero.sub":"كوين هير باي إلهام صالون في مونتريال متخصص في البالياج وفرد الشعر والعناية بالشعر.",
+    "hero.cta1":"اتصلي بالصالون","hero.cta2":"احجزي عبر الرسائل",
+    "stats.reviews":"آراء العملاء","stats.years":"سنوات من الخبرة","stats.services":"خدمة متاحة","stats.location":"مونتريال، كيبيك",
+    "work.eyebrow":"إنجازاتنا","work.heading":"عملي","work.sub":"اكتشفي لمحة عن تحولات الشعر وعلاجاتنا الاحترافية.",
+    "services.eyebrow":"خدماتنا","services.heading":"الخدمات","services.sub":"مجموعة كاملة من خدمات الشعر، مصممة لإظهار صحة شعركِ وجماله الطبيعي.",
+    "about.eyebrow":"عن الصالون","about.heading":"كوين هير باي إلهام",
+    "about.body":"كوين هير باي إلهام صالون في مونتريال متخصص في فرد الشعر والبالياج والعناية بالشعر. نصنع تحولات شعر عصرية وبرّاقة تناسب كل نوع شعر.",
+    "contact.eyebrow":"زورونا","contact.heading":"ساعات العمل والتواصل","contact.address":"العنوان","contact.phone":"الهاتف","contact.follow":"تابعونا","contact.hours":"ساعات العمل","contact.directions":"الاتجاهات ←",
+    "cta.heading":"مستعدة لتحولك؟","cta.sub":"احجزي موعدك في كوين هير باي إلهام وعيشي تجربة شعر لا تُنسى.",
+    "footer.copy":"© 2026 كوين هير باي إلهام. جميع الحقوق محفوظة."
+  }
+};
+
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (T[lang][k] !== undefined) el.innerHTML = T[lang][k];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const k = el.getAttribute("data-i18n-html");
+    if (T[lang][k] !== undefined) el.innerHTML = T[lang][k];
+  });
+  document.querySelectorAll(".langs button").forEach(b => {
+    b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+  });
+  const grid = document.getElementById("servicesGrid");
+  grid.innerHTML = "";
+  SERVICES[lang].forEach(s => {
+    const d = document.createElement("div");
+    d.className = "service-item";
+    d.innerHTML = '<span class="service-dot"></span><span>' + s + '</span>';
+    grid.appendChild(d);
+  });
+  const table = document.getElementById("hoursTable");
+  table.innerHTML = "";
+  HOURS[lang].forEach(row => {
+    const tr = document.createElement("tr");
+    if (row[2]) tr.className = "closed";
+    tr.innerHTML = "<td>" + row[0] + "</td><td>" + row[1] + "</td>";
+    table.appendChild(tr);
+  });
+}
+
+document.querySelectorAll(".langs button").forEach(b => {
+  b.addEventListener("click", () => setLanguage(b.getAttribute("data-lang")));
+});
+document.getElementById("burgerBtn").addEventListener("click", () => {
+  document.getElementById("mobileMenu").classList.toggle("open");
+});
+document.querySelectorAll(".mobile-menu a").forEach(a => {
+  a.addEventListener("click", () => document.getElementById("mobileMenu").classList.remove("open"));
+});
+
+setLanguage("fr");
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
